@@ -1,4 +1,5 @@
 exceptions\iExceptionEnum.class
+<<<<<<< HEAD
 view\FrmLogin$1.class
 controller\iUserController.class
 view\FrmRegister$2.class
@@ -27,5 +28,28 @@ exceptions\UserException.class
 repositories\ConnectorSQLite.class
 repositories\iUserRepository.class
 access\iRepository.class
+=======
+controller\iUserController.class
+controller\UserController.class
+exceptions\UserExceptionEnum.class
+exceptions\ChainOfCharacterExceptionEnum.class
+models\UserModel.class
+repositories\iModel.class
+access\iConnectionDB.class
+controller\validations\UserValidation.class
+repositories\factory\UserFactory.class
+models\RoleEnum.class
+controller\validations\ChainOfCharacter.class
+repositories\factory\FactoryManager.class
+exceptions\ModelException.class
+repositories\factory\Factory.class
+exceptions\UserException.class
+repositories\ConnectorSQLite.class
+exceptions\ChainOfCharacterException.class
+repositories\iUserRepository.class
+Utilities\iEncryptor.class
+access\iRepository.class
+models\CareerEnum.class
+>>>>>>> 9f01649d26e844c5ca2f5f931691979a71591542
 Utilities\Encryptor.class
 controller\validations\iChainOfCharacter.class
