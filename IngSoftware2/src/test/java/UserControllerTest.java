@@ -44,22 +44,28 @@ public class UserControllerTest {
         {
             System.out.println(ex.getMessage());
         }
-        
     }
     
     @Test
     public void saveIncorrect() throws UserException
     {
-        // Datos correctos
-        assertEquals(atrUserController.save(new UserModel(
-            "javier",
-            "solano",
-            "javiersolano@gmail.edu.co",
-            "hol4$OL",
-            Long.valueOf("32124567890"),
-            CareerEnum.SYSTEM_ENGINEERING,
-            RoleEnum.ESTUDENT
-        )), true);
+        // Datos incorrectos
+        try
+        {
+            assertEquals(atrUserController.save(new UserModel(
+                "javier",
+                "solano",
+                "javiersolano@gmail.co",
+                "123456",
+                Long.valueOf("32124567890"),
+                CareerEnum.SYSTEM_ENGINEERING,
+                RoleEnum.ESTUDENT
+            )), false);
+        }
+        catch(UserException ex)
+        {
+            System.out.println(ex.getMessage());
+        }
     }
     
     @Test

@@ -3,8 +3,9 @@ package controller.validations;
 import exceptions.ChainOfCharacterException;
 
 /**
- *
- * @author javim
+ * Contrato para validaciones de cadenas
+ * 
+ * @author javiersolanop777
  */
 public interface iChainOfCharacter {
     

@@ -6,7 +6,7 @@ import models.UserModel;
  *  Clase para el manejo de excepciones de la clase 'UserModel'
  *  @see UserModel
  * 
- * @author javim
+ * @author javiersolanop777
  */
 public class UserException extends ModelException {
     

@@ -9,7 +9,7 @@ import models.UserModel;
  *  Clase para las validaciones de los usuarios
  *  @see UserModel
  * 
- * @author javim
+ * @author javiersolanop777
  */
 public class UserValidation {
     
