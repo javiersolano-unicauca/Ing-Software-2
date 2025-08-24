@@ -3,7 +3,7 @@ package co.unicauca.solid.dip.domain.models;
 import co.unicauca.solid.dip.domain.interfaces.iModel;
 import java.util.HashMap;
 import java.util.Map;
-import models.CareerEnum;
+
 //import models.RoleEnum;
 //import repositories.iModel;
 

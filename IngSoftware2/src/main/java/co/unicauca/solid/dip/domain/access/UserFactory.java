@@ -2,6 +2,8 @@ package co.unicauca.solid.dip.domain.access;
 
 import co.unicauca.solid.dip.domain.interfaces.iModel;
 import co.unicauca.solid.dip.domain.interfaces.iUserRepository;
+import co.unicauca.solid.dip.domain.models.CareerEnum;
+import co.unicauca.solid.dip.domain.models.RoleEnum;
 import co.unicauca.solid.dip.domain.models.UserModel;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,8 +14,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import models.CareerEnum;
-import models.RoleEnum;
+
 
 //import repositories.iModel;
 //import repositories.iUserRepository;

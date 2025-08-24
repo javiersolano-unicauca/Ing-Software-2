@@ -1,9 +1,9 @@
 import co.unicauca.solid.dip.domain.exception.UserException;
 import co.unicauca.solid.dip.domain.interfaces.iUserService;
+import co.unicauca.solid.dip.domain.models.RoleEnum;
+import co.unicauca.solid.dip.domain.models.CareerEnum;
 import co.unicauca.solid.dip.domain.models.UserModel;
 import co.unicauca.solid.dip.domain.services.UserService;
-import models.CareerEnum;
-import models.RoleEnum;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

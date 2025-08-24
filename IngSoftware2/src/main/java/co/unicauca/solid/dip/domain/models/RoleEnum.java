@@ -1,4 +1,4 @@
-package models;
+package co.unicauca.solid.dip.domain.models;
 
 /**
  * Enumerador de los roles para un usuario

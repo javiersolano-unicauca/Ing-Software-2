@@ -10,10 +10,14 @@ package co.unicauca.solid.dip.domain.view;
 //import co.unicauca.solid.dip.domain.EnumPrograma;
 //import co.unicauca.solid.dip.domain.EnumRol;
 import co.unicauca.solid.dip.domain.interfaces.iUserService;
+import co.unicauca.solid.dip.domain.models.RoleEnum;
 import co.unicauca.solid.dip.domain.models.UserModel;
 import co.unicauca.solid.dip.domain.services.UserService;
-import models.CareerEnum;
-import models.RoleEnum;
+import co.unicauca.solid.dip.domain.models.CareerEnum;
+import javax.management.relation.RoleStatus;
+
+
+
 
 
 /**
@@ -338,8 +342,8 @@ public class FrameRegister extends javax.swing.JFrame {
                 Email.getText(),
                 new String(Password.getPassword()),
                 Long.parseLong(Phone.getText()),
-                models.CareerEnum.getCareer(Career.getSelectedItem().toString()),
-                models.RoleEnum.getRole(Role.getSelectedItem().toString())
+                CareerEnum.getCareer(Career.getSelectedItem().toString()),
+                    RoleEnum.getRole(Role.getSelectedItem().toString())
             );
 
             boolean saved = service.save(user);

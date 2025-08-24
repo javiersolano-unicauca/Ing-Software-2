@@ -1,12 +1,13 @@
 import co.unicauca.solid.dip.domain.access.FactoryManager;
 import co.unicauca.solid.dip.domain.interfaces.iModel;
 import co.unicauca.solid.dip.domain.interfaces.iUserRepository;
+import co.unicauca.solid.dip.domain.models.CareerEnum;
+import co.unicauca.solid.dip.domain.models.RoleEnum;
 import co.unicauca.solid.dip.domain.models.UserModel;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import models.CareerEnum;
-import models.RoleEnum;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -42,8 +43,8 @@ public class UserRepositoryTest {
             "javiersolano@unicauca.edu.co",
             "123",
             Long.valueOf("32124567890"),
-            CareerEnum.SYSTEM_ENGINEERING,
-            RoleEnum.ESTUDENT
+                CareerEnum.SYSTEM_ENGINEERING,
+                RoleEnum.ESTUDENT
         )), true);
         
         List<iModel> listUsers = atrUserRepository.list();

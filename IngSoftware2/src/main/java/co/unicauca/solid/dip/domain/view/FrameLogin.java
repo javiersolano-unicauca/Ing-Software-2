@@ -8,10 +8,11 @@ package co.unicauca.solid.dip.domain.view;
 
 import co.unicauca.solid.dip.domain.interfaces.iEncryptor;
 import co.unicauca.solid.dip.domain.interfaces.iUserService;
+import co.unicauca.solid.dip.domain.models.RoleEnum;
 import co.unicauca.solid.dip.domain.models.UserModel;
 import co.unicauca.solid.dip.domain.services.Encryptor;
 import co.unicauca.solid.dip.domain.services.UserService;
-import models.RoleEnum;
+
 
 //import co.unicauca.solid.dip.domain.access.UsuarioRepository;
 //import co.unicauca.solid.dip.domain.Usuario;
