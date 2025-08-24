@@ -1,14 +1,16 @@
+import co.unicauca.solid.dip.domain.access.FactoryManager;
+import co.unicauca.solid.dip.domain.interfaces.iModel;
+import co.unicauca.solid.dip.domain.interfaces.iUserRepository;
+import co.unicauca.solid.dip.domain.models.UserModel;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import models.CareerEnum;
 import models.RoleEnum;
-import models.UserModel;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import repositories.factory.FactoryManager;
-import repositories.iModel;
-import repositories.iUserRepository;
+
+
 
 /**
  * Test unitario para iUserRepository
