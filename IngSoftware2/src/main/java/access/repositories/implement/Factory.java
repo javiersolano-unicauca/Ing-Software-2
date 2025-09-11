@@ -4,7 +4,6 @@ import access.repositories.interfaces.iConnectionDB;
 import access.repositories.interfaces.iRepository;
 import support.operation.dependency_injection.PropertyMapping;
 
-
 /**
  * Clase abstracta para la creacion de fabricas de tipo iRepository
  * @see iRepository

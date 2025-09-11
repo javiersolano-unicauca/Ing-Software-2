@@ -1,10 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package presentation;
 
-//import co.unicauca.solid.dip.domain.service.UsuarioService;
 
 import access.models.RoleEnum;
 import access.models.implement.UserModel;
@@ -12,25 +7,32 @@ import support.security.iEncryptor;
 import support.security.Encryptor;
 import business.controllers.implement.UserController;
 import business.controllers.interfaces.iUserController;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import presentation.interfaces.iGUILogin;
 
-
-//import co.unicauca.solid.dip.domain.access.UsuarioRepository;
-//import co.unicauca.solid.dip.domain.Usuario;
-//import co.unicauca.solid.dip.domain.service.Encryptor;
-//import javax.swing.text.Utilities;
 /**
  *
  * @author laura
  */
-public class FrameLogin extends javax.swing.JFrame {
+public class GUILogin extends javax.swing.JFrame implements iGUILogin {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrameLogin.class.getName());
-
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUILogin.class.getName());
+    
     /**
      * Creates new form FrameLogin
      */
-    public FrameLogin() {
+    public GUILogin() {
         initComponents();
+    }
+    
+    @Override
+    public JFrame getView() 
+    {
+        return this;
     }
 
     /**
@@ -195,72 +197,51 @@ public class FrameLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void EmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_EmailActionPerformed
 
     private void RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterActionPerformed
-        new FrameRegister().setVisible(true);
-        this.dispose();
+
     }//GEN-LAST:event_RegisterActionPerformed
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
 
-        iUserController service = new UserController();
-       
-        String email = Email.getText();
-        String password = new String(Password.getPassword());
-
-        UserModel user =  service.getUser(email);
-        
-        if(user != null) {
-            
-            iEncryptor enc = new Encryptor();
-            
-            if(enc.checkHash(password, user.getPassword())){
-                String rol = user.getRole().getName();
-                if(rol.equalsIgnoreCase(RoleEnum.ESTUDENT.getName())) {
-                    FrameStudent fe = new FrameStudent();
-                    fe.setVisible(true);
-                    this.dispose();
-                } else if(rol.equalsIgnoreCase(RoleEnum.TEACHER.getName())) {
-                    FrameTeacher fd = new FrameTeacher();
-                    fd.setVisible(true);
-                    this.dispose();
-                }
-                else 
-                {
-                    javax.swing.JOptionPane.showMessageDialog(this, "Contraseña incorrecta");
-                }
-            } 
-            else {
-                    javax.swing.JOptionPane.showMessageDialog(this, "Usuario no encontrado");
-            } 
-        }
     }//GEN-LAST:event_LoginActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    
+    @Override
+    public JTextField getFieldEmail()
+    {
+        return this.Email;
+    }
+    
+    @Override
+    public JPasswordField getFieldPassword()
+    {
+        return this.Password;
+    }
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new FrameLogin().setVisible(true));
+    @Override
+    public JButton getButtonRegister() 
+    {
+        return this.Register;
+    }
+    
+    @Override
+    public JButton getButtonLogin()
+    {
+        return this.Login;
+    }
+    
+    @Override
+    public void showMessage(String prmMessage, int prmMessageType)
+    {
+        JOptionPane.showMessageDialog(
+            this, 
+            prmMessage, 
+            "Inicio de sesion", 
+            prmMessageType
+        );
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -279,4 +260,5 @@ public class FrameLogin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPasswordField1;
     // End of variables declaration//GEN-END:variables
+
 }

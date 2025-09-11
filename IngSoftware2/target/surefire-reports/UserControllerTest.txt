@@ -1,11 +1,11 @@
 -------------------------------------------------------------------------------
 Test set: UserControllerTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.073 s <<< FAILURE! - in UserControllerTest
-UserControllerTest.getUserCorrect  Time elapsed: 0.037 s  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.079 s <<< FAILURE! - in UserControllerTest
+UserControllerTest.saveCorrect  Time elapsed: 0.039 s  <<< ERROR!
 java.lang.NullPointerException
-	at business.controllers.implement.UserController.getUser(UserController.java:52)
-	at UserControllerTest.getUserCorrect(UserControllerTest.java:75)
+	at business.controllers.implement.UserController.save(UserController.java:38)
+	at UserControllerTest.saveCorrect(UserControllerTest.java:33)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

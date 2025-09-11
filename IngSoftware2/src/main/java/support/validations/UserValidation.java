@@ -81,7 +81,7 @@ public class UserValidation implements iValidator {
         if(isNull(prmUser.getNames(), UserExceptionEnum.NAMES)
         || isEmpty(prmUser.getNames(), UserExceptionEnum.NAMES)) return;
         
-        if(prmUser.getNames().matches("[a-zA-Z ]*"))
+        if(!prmUser.getNames().matches("[a-zA-Z ]*"))
         {
             atrException.addExceptionMessage(
                 UserExceptionEnum.NAMES, 
@@ -98,7 +98,7 @@ public class UserValidation implements iValidator {
         if(isNull(prmUser.getSurnames(), UserExceptionEnum.SURNAMES)
         || isEmpty(prmUser.getSurnames(), UserExceptionEnum.SURNAMES)) return;
         
-        if(prmUser.getSurnames().matches("[a-zA-Z ]*"))
+        if(!prmUser.getSurnames().matches("[a-zA-Z ]*"))
         {
             atrException.addExceptionMessage(
                 UserExceptionEnum.SURNAMES, 

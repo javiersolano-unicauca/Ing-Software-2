@@ -28,22 +28,21 @@ public class UserController implements iUserController {
     {}
 
     @Override
-    public boolean save(UserModel prmUser) throws ModelException
+    public UserModel save(UserModel prmUser) throws ModelException
     {
-        if(prmUser == null) return false;
+        if(prmUser == null) return null;
         
         iValidator objValidator = new UserValidation();
         objValidator.validate(prmUser);
         
         UserModel objUser = (UserModel) atrUserRepository.getById(prmUser.getEmail());
         
-        if(objUser != null) return false;
+        if(objUser != null) return null;
         
         iEncryptor objEncryptor = new Encryptor();
-        
         prmUser.setPassword(objEncryptor.encrypt(prmUser.getPassword()));
         
-        return atrUserRepository.save(prmUser);
+        return (atrUserRepository.save(prmUser)) ? prmUser : null;
     }
 
     @Override

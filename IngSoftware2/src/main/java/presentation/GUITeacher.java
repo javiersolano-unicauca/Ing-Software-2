@@ -4,20 +4,20 @@
  */
 package presentation;
 
-import presentation.FrameLogin;
+import presentation.GUILogin;
 
 /**
  *
  * @author laura
  */
-public class FrameTeacher extends javax.swing.JFrame {
+public class GUITeacher extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrameTeacher.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUITeacher.class.getName());
 
     /**
      * Creates new form FrameTeacher
      */
-    public FrameTeacher() {
+    public GUITeacher() {
         initComponents();
     }
 
@@ -166,7 +166,7 @@ public class FrameTeacher extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Back_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_loginActionPerformed
-        new FrameLogin().setVisible(true);
+        new GUILogin().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Back_loginActionPerformed
 
@@ -192,7 +192,7 @@ public class FrameTeacher extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new FrameTeacher().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new GUITeacher().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

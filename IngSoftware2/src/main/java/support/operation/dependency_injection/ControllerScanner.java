@@ -1,5 +1,7 @@
 package support.operation.dependency_injection;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 import presentation.ClientMain;
 
@@ -31,17 +33,23 @@ public final class ControllerScanner {
      * 
      * @return La lista de clases si las hay. De lo contrario null
      */
-    public Set<Class<?>> getControllersClasses()
+    public List<Set<Class<?>>> getControllersClasses()
     {
         if(ClientMain.class.isAnnotationPresent(ControllersScan.class))
         {
-            String varPackageName = ClientMain.class.getAnnotation(ControllersScan.class)
-                                                    .packageName();
+            String[] arrPackagesNames = ClientMain.class.getAnnotation(ControllersScan.class)
+                                                    .packagesNames();
             
-            return ATR_SCANNER.getClassesByAnnotation(
-                                                    varPackageName, 
-                                                    Controller.class
-                                                    );
+            List<Set<Class<?>>> listPackages = new LinkedList<>();
+            
+            for(String objPackageName: arrPackagesNames)
+            {
+                listPackages.add(ATR_SCANNER.getClassesByAnnotation(
+                objPackageName, 
+                Controller.class
+                ));
+            }
+            return listPackages;
         }
         return null;
     }

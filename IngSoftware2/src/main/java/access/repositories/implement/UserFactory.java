@@ -80,7 +80,7 @@ public class UserFactory extends Factory<String> implements iUserRepository {
         atrConnection.connect();
         
         try
-        {
+        {          
             if(prmModel == null || !prmModel.validateFields()) return false;
             
             String varSql = "INSERT OR REPLACE INTO " + this.atrEntityName + "("

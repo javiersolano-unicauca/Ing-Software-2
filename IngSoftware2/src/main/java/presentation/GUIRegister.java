@@ -11,21 +11,27 @@ import access.models.implement.UserModel;
 import business.controllers.implement.UserController;
 import business.controllers.interfaces.iUserController;
 import javax.swing.Icon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import presentation.interfaces.iGUIRegister;
 
 
 /**
  *
  * @author laura
  */
-public class FrameRegister extends javax.swing.JFrame {
+public class GUIRegister extends javax.swing.JFrame implements iGUIRegister {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrameRegister.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIRegister.class.getName());
 
     /**
      * Creates new form FrameRegister
      */
-    public FrameRegister() {
+    public GUIRegister() {
         initComponents();
         for (CareerEnum c : CareerEnum.values()) {
             Career.addItem(c.getName());
@@ -271,9 +277,9 @@ public class FrameRegister extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Career, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Role, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
                         .addComponent(jLabel16)
-                        .addContainerGap(200, Short.MAX_VALUE))
+                        .addContainerGap(194, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Register)
@@ -322,70 +328,82 @@ public class FrameRegister extends javax.swing.JFrame {
     }//GEN-LAST:event_PhoneActionPerformed
 
     private void RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterActionPerformed
-        try {
 
-            iUserController service = new UserController();
-           
-            UserModel user = new UserModel(
-                Name.getText(),
-                Surname.getText(),
-                Email.getText(),
-                new String(Password.getPassword()),
-                Long.parseLong(Phone.getText()),
-                CareerEnum.getCareer(Career.getSelectedItem().toString()),
-                    RoleEnum.getRole(Role.getSelectedItem().toString())
-            );
-
-            boolean saved = service.save(user);
-
-            if(saved){
-                javax.swing.JOptionPane.showMessageDialog(
-                        this, 
-                        "Usuario registrado correctamente"
-                );
-                new FrameLogin().setVisible(true);
-                this.dispose();
-            } 
-           
-
-        }catch (Exception ex) {
-            javax.swing.JOptionPane.showMessageDialog(
-                    this, 
-                    ex.getMessage(),
-                    "Error de registro",
-                    JOptionPane.ERROR_MESSAGE
-            );
-        }
     }//GEN-LAST:event_RegisterActionPerformed
 
     private void Back_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_loginActionPerformed
-        new FrameLogin().setVisible(true);
-        this.dispose();
+
     }//GEN-LAST:event_Back_loginActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    @Override
+    public JFrame getView() 
+    {
+        return this;
+    }
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new FrameRegister().setVisible(true));
+    @Override
+    public JTextField getFieldName() 
+    {
+        return Name;
+    }
+
+    @Override
+    public JTextField getFieldSurname() 
+    {
+        return Surname;
+    }
+
+    @Override
+    public JTextField getFieldEmail() 
+    {
+        return Email;
+    }
+
+    @Override
+    public JPasswordField getFieldPassword() 
+    {
+        return Password;
+    }
+
+    @Override
+    public JTextField getFieldPhone() 
+    {
+        return Phone;
+    }
+
+    @Override
+    public JComboBox<String> getFieldCareer() 
+    {
+        return Career;
+    }
+
+    @Override
+    public JComboBox<String> getFieldRole() 
+    {
+        return Role;
+    }
+
+    @Override
+    public JButton getButtonRegister() 
+    {
+        return Register;
+    }
+
+    @Override
+    public JButton getButtonBackLogin() 
+    {
+        return Back_login;
+    }
+    
+    @Override
+    public void showMessage(String prmMessage, int prmMessageType)
+    {
+        JOptionPane.showMessageDialog(
+            this, 
+            prmMessage, 
+            "Registro de usuario",
+            prmMessageType
+        );
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -421,4 +439,5 @@ public class FrameRegister extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
+
 }
