@@ -1,5 +1,4 @@
 access\repositories\implement\UserFactory.class
-support\operation\dependency_injection\Property.class
 business\controllers\implement\SessionController.class
 access\models\implement\UserModel.class
 presentation\GUIStudent$1.class
@@ -21,7 +20,6 @@ support\validations\UserValidation.class
 presentation\interfaces\iGUILogin.class
 presentation\GUILogin$2.class
 presentation\Application.class
-support\operation\dependency_injection\PropertyMapping.class
 presentation\interfaces\iGUIRegister.class
 presentation\controllers\GUITeacherController.class
 support\operation\dependency_injection\RepsositoriesScan.class
@@ -35,7 +33,6 @@ presentation\ClientMain.class
 presentation\GUIRegister$3.class
 support\operation\model_exceptions\iFieldEnum.class
 presentation\GUITeacher$1.class
-support\operation\dependency_injection\iScanner.class
 access\repositories\implement\ConnectorSQLite.class
 presentation\GUILogin$1.class
 support\operation\dependency_injection\RepositoryScanner.class
@@ -45,7 +42,6 @@ presentation\interfaces\iObserver.class
 presentation\GUILogin.class
 presentation\controllers\GUIRegisterController.class
 presentation\GUITeacher.class
-support\operation\dependency_injection\ScannerPackage.class
 presentation\GUIRegister$2.class
 presentation\GUIRegister.class
 access\repositories\interfaces\iConnectionDB.class

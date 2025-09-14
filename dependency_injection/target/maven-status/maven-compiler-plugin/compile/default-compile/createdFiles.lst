@@ -1,0 +1,4 @@
+plugin\dependency_injection\implement\Injector.class
+plugin\dependency_injection\interfaces\iInjector.class
+plugin\dependency_injection\implement\ScannerPackage.class
+plugin\dependency_injection\interfaces\iScanner.class

@@ -8,11 +8,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import support.operation.dependency_injection.Property;
+import plugin.property_mapping.annotations.Property;
+import plugin.property_mapping.annotations.PropertyMapping;
 
 /**
  * @author javiersolanop777
  */
+@PropertyMapping
 public class ConnectorSQLite implements iConnectionDB {
     
     /**
@@ -21,7 +23,7 @@ public class ConnectorSQLite implements iConnectionDB {
     private Connection atrConnection;
     
     @Property(property = "sqlite.url")
-    private String atrUrl;
+    private static String atrUrl;
     
     public ConnectorSQLite()
     {

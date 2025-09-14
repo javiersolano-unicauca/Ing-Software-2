@@ -1,12 +1,12 @@
 package presentation;
 
-import access.repositories.implement.Factory;
-import java.lang.reflect.Field;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import plugin.dependency_injection.implement.Injector;
+import plugin.dependency_injection.interfaces.iInjector;
+import plugin.property_mapping.implement.MapperOfProperties;
 import presentation.controllers.GUILoginController;
 import support.operation.dependency_injection.ControllerAutowired;
 import support.operation.dependency_injection.ControllerScanner;
@@ -21,21 +21,26 @@ import support.operation.dependency_injection.RepositoryScanner;
 public class Application {
     
     /**
-     * Almacena las instancias de fabricas de repositorios;
+     * Almacena el nombre del archivo de propiedades en el proyecto
      */
-    private final List<Object> atrRespositoryFactories;
+    private static final String ATR_PROPERTIES_FILE = "application";
     
     /**
-     * Almacena las instancias de controladores
+     * Almacena el inyector de fabricas de repositorios
      */
-    private final List<Object> atrControllers;
+    private final iInjector atrRepositoryInjector;
+    
+    /**
+     * Almacena el inyector de fabricas de controladores
+     */
+    private final iInjector atrInjectorOfController;
     
     // Constructor:
     
     public Application()
     {
-        atrRespositoryFactories = new LinkedList<>();
-        atrControllers = new LinkedList<>();
+        atrRepositoryInjector = new Injector();
+        atrInjectorOfController = new Injector();
     }
     
     /**
@@ -46,10 +51,10 @@ public class Application {
         try
         {
             RepositoryScanner objRepositoryScanner = new RepositoryScanner();
-            Set<Class<?>> listClasses = objRepositoryScanner.getRepsoritoryFactoriesClasses();
+            Set<Class<?>> listClasses = objRepositoryScanner.getRepositoryFactoriesClasses();
             
             for(Class<?> objClass: listClasses)
-                atrRespositoryFactories.add(objClass.getDeclaredConstructor().newInstance());
+                atrRepositoryInjector.addFactory(objClass.getDeclaredConstructor().newInstance());
         } 
         catch(Exception ex) 
         {
@@ -68,24 +73,7 @@ public class Application {
      */
     private void factoryAssignament(Object prmObject) throws IllegalArgumentException, IllegalAccessException
     {
-        Field arrFields[] = prmObject.getClass().getDeclaredFields();
-        
-        for(Field objField: arrFields)
-        {
-            objField.setAccessible(true);
-            
-            if(objField.isAnnotationPresent(FactoryAutowired.class))
-            {
-                for(Object objFactory: atrRespositoryFactories)
-                {
-                    if(objField.getType().isAssignableFrom(objFactory.getClass()))
-                    {
-                        objField.set(prmObject, (Object) ((Factory<?>) objFactory).getRespositoryFactory());
-                        break;
-                    }
-                }
-            }
-        }
+        atrRepositoryInjector.assignament(prmObject, FactoryAutowired.class);
     }
     
     /**
@@ -93,36 +81,9 @@ public class Application {
      */
     private void controllersAssignament()
     {
-        try
-        {
-            Field arrFields[];
-            
-            for(Object objController1: atrControllers)
-            {
-                arrFields = objController1.getClass().getDeclaredFields();
-                
-                for(Field objField: arrFields)
-                {
-                    objField.setAccessible(true);
-                    
-                    if(objField.isAnnotationPresent(ControllerAutowired.class))
-                    {
-                        for(Object objController2: atrControllers)
-                        {
-                            if(objField.getType().isAssignableFrom(objController2.getClass()))
-                            {  
-                                objField.set(objController1, objController2);
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        catch(Exception ex) 
-        {
-            Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        atrInjectorOfController.forEach((Object prmFactory) -> {
+            atrInjectorOfController.assignament(prmFactory, ControllerAutowired.class);
+        });
     }
     
     /**
@@ -142,7 +103,7 @@ public class Application {
                 {
                     objController = objClass.getDeclaredConstructor().newInstance();
                     factoryAssignament(objController);
-                    atrControllers.add(objController);
+                    atrInjectorOfController.addFactory(objController);
                 } 
             }  
             controllersAssignament();
@@ -155,19 +116,14 @@ public class Application {
     
     public void run()
     {
+        MapperOfProperties objMapperOfProperties = new MapperOfProperties(ATR_PROPERTIES_FILE);
+        objMapperOfProperties.propertiesAssignament(ClientMain.class);
+        
         repositoryFactoriesLoader();
         controllersLoader();
         
-        GUILoginController objGUILoginController = null;
-        
-        for(Object objController: atrControllers)
-        {
-            if(objController.getClass().equals(GUILoginController.class))
-            {
-                objGUILoginController = (GUILoginController) objController;
-                break;
-            }
-        }
+        GUILoginController objGUILoginController = (GUILoginController) atrInjectorOfController
+                                                    .getFactory(GUILoginController.class);
         
         if(objGUILoginController != null) objGUILoginController.run();
     }  

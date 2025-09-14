@@ -2,7 +2,6 @@ package access.repositories.implement;
 
 import access.repositories.interfaces.iConnectionDB;
 import access.repositories.interfaces.iRepository;
-import support.operation.dependency_injection.PropertyMapping;
 
 /**
  * Clase abstracta para la creacion de fabricas de tipo iRepository
@@ -32,8 +31,6 @@ public abstract class Factory<ID> {
     public void connectorInit()
     {
         atrConnection = new ConnectorSQLite();
-        PropertyMapping objPropertyMapping = new PropertyMapping();
-        objPropertyMapping.propertiesAssignament(atrConnection);
     }
     
     /**

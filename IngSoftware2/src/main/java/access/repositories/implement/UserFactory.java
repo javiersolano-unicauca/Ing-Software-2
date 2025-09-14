@@ -49,7 +49,11 @@ public class UserFactory extends Factory<String> implements iUserRepository {
         + "           'Automatica Industrial',"
         + "           'Tecnologia en Telematica'"
         + "     )),"
-        + "     role TEXT NOT NULL CHECK(role IN ('estudiante', 'profesor'))"
+        + "     role TEXT NOT NULL CHECK(role IN ("
+        + "           'estudiante',"
+        + "           'profesor',"
+        + "           'administrador'"
+        + "     ))"
         + ");";
 
         try 

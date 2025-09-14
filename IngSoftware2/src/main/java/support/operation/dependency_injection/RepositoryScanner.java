@@ -1,6 +1,8 @@
 package support.operation.dependency_injection;
 
+import plugin.dependency_injection.interfaces.iScanner;
 import java.util.Set;
+import plugin.dependency_injection.implement.ScannerPackage;
 import presentation.ClientMain;
 
 /**
@@ -31,7 +33,7 @@ public final class RepositoryScanner {
      * 
      * @return La lista de clases si las hay. De lo contrario null
      */
-    public Set<Class<?>> getRepsoritoryFactoriesClasses()
+    public Set<Class<?>> getRepositoryFactoriesClasses()
     {
         if(ClientMain.class.isAnnotationPresent(RepsositoriesScan.class))
         {

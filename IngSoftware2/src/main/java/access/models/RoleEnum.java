@@ -8,7 +8,8 @@ package access.models;
 public enum RoleEnum {
     
     ESTUDENT("estudiante"),
-    TEACHER("profesor");
+    TEACHER("profesor"),
+    ADMINISTRATOR("administrador");
     
     private String atrName;
     

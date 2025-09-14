@@ -3,6 +3,8 @@ package support.operation.dependency_injection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+import plugin.dependency_injection.implement.ScannerPackage;
+import plugin.dependency_injection.interfaces.iScanner;
 import presentation.ClientMain;
 
 /**
