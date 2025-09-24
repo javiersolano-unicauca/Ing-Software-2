@@ -154,4 +154,17 @@ public class UserModel implements iModel {
         
         return listFields;
     }
+    
+    @Override
+    public String toString() 
+    {
+        return "\nUserModel(\n"
+               + "\n\tNames: " + this.atrNames
+               + "\n\tSurnames: " + this.atrSurnames
+               + "\n\tEmail: " + this.atrEmail
+               + "\n\tTelephone: " + this.atrTelephone
+               + "\n\tCareer: " + this.atrCareer.getName()
+               + "\n\tRole: " + this.atrRole.getName()
+               + "\n)\n";
+    }
 }

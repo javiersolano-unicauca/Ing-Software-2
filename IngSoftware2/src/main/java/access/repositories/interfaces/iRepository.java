@@ -37,4 +37,13 @@ public interface iRepository<ID> {
      * @return La instancia si existe. De lo contrario null
      */
     iModel getById(ID prmId);
+    
+    /**
+     * Metodo para remover un registro en la DB
+     * 
+     * @param prmId Recibe el id del registro
+     * 
+     * @return 'true' si se puede remover. 'false' si no  
+     */
+    boolean remove(ID prmId);
 }

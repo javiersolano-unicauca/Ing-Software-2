@@ -12,7 +12,7 @@ public enum CareerEnum {
     INDUSTRIAL_AUTOMATIC("Automatica Industrial"),
     TELEMATICS_TECHNOLOGY("Tecnologia en Telematica");
     
-    private String atrName;
+    private final String atrName;
     
     CareerEnum(String prmName)
     {

@@ -7,10 +7,6 @@ package presentation;
 
 import access.models.CareerEnum;
 import access.models.RoleEnum;
-import access.models.implement.UserModel;
-import business.controllers.implement.UserController;
-import business.controllers.interfaces.iUserController;
-import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;

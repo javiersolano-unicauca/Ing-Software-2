@@ -23,7 +23,7 @@ public class ConnectorSQLite implements iConnectionDB {
     private Connection atrConnection;
     
     @Property(property = "sqlite.url")
-    private static String atrUrl;
+    public static String atrUrl;
     
     public ConnectorSQLite()
     {
@@ -75,9 +75,14 @@ public class ConnectorSQLite implements iConnectionDB {
     @Override
     public Statement createStatement() 
     {
-        try {
-            return this.atrConnection.createStatement();
-        } catch (SQLException ex) {
+        try
+        {
+            Statement objStmt = this.atrConnection.createStatement();
+            objStmt.execute("PRAGMA foreign_keys = ON");
+            return objStmt;
+        } 
+        catch(SQLException ex) 
+        {
             Logger.getLogger(ConnectorSQLite.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;

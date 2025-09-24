@@ -1,16 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package presentation;
 
-import presentation.GUILogin;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import presentation.interfaces.iGUITeacher;
 
 /**
  *
  * @author laura
  */
-public class GUITeacher extends javax.swing.JFrame {
+public class GUITeacher extends javax.swing.JFrame implements iGUITeacher {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUITeacher.class.getName());
 
@@ -19,6 +18,29 @@ public class GUITeacher extends javax.swing.JFrame {
      */
     public GUITeacher() {
         initComponents();
+    }
+    
+    @Override
+    public JFrame getView() 
+    {
+        return this;
+    }
+    
+    @Override
+    public JButton getButtonBackLogin() 
+    {
+        return Back_login;
+    }
+
+    @Override
+    public void showMessage(String prmMessage, int prmMessageType)
+    {
+        JOptionPane.showMessageDialog(
+            this, 
+            prmMessage, 
+            "Modulo de profesor", 
+            prmMessageType
+        );
     }
 
     /**
@@ -166,34 +188,9 @@ public class GUITeacher extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Back_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_loginActionPerformed
-        new GUILogin().setVisible(true);
-        this.dispose();
+
     }//GEN-LAST:event_Back_loginActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new GUITeacher().setVisible(true));
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back_login;
@@ -206,4 +203,5 @@ public class GUITeacher extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
+
 }

@@ -17,5 +17,13 @@ public interface iValidator {
      * 
      *  @throws ModelException Cuando los campos no son validos en su totalidad
      */
-    public void validate(iModel prmModel) throws ModelException;
+    void validate(iModel prmModel) throws ModelException;
+    
+    /**
+     * Metodo para lanzar la excepcion
+     * 
+     * @throws ModelException Cuando los campos validados 
+     *                        no son correctos
+     */
+    void throwException() throws ModelException;
 }

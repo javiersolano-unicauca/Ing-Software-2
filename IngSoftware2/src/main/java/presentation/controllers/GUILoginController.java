@@ -9,6 +9,8 @@ import presentation.GUILogin;
 import presentation.interfaces.iGUILogin;
 import presentation.interfaces.iGUILoginController;
 import presentation.interfaces.iGUIRegisterController;
+import presentation.interfaces.iGUIStudentController;
+import presentation.interfaces.iGUITeacherController;
 import presentation.interfaces.iObserver;
 import support.operation.dependency_injection.Controller;
 import support.operation.dependency_injection.ControllerAutowired;
@@ -20,12 +22,12 @@ import support.operation.dependency_injection.ControllerAutowired;
  * @author javiersolanop777
  */
 @Controller
-public class GUILoginController extends Subject implements iGUILoginController, iObserver {
+public class GUILoginController extends Subject implements iObserver, iGUILoginController {
     
     /**
      * Almacena la vista para el inicio de sesion
      */
-    private final iGUILogin atrGUILogin;
+    private final iGUILogin ATR_GUI_LOGIN;
     
     /**
      * Almacena la bandera para la carga de las acciones de eventos
@@ -38,11 +40,17 @@ public class GUILoginController extends Subject implements iGUILoginController, 
     @ControllerAutowired
     private iGUIRegisterController atrGUIRegisterController;
     
+    @ControllerAutowired
+    private iGUITeacherController atrGUITeacherController;
+    
+    @ControllerAutowired
+    private iGUIStudentController atrGUIStudentController;
+    
     // Contructors:
     
     public GUILoginController()
     {
-        this.atrGUILogin = new GUILogin();
+        this.ATR_GUI_LOGIN = new GUILogin();
     }
     
     @Override
@@ -51,8 +59,21 @@ public class GUILoginController extends Subject implements iGUILoginController, 
         if(!this.noneObserver()) return;
         
         this.addObserver((iObserver) atrGUIRegisterController);
-        this.addObserver(new GUIStudentController());
-        this.addObserver(new GUITeacherController());
+        this.addObserver((iObserver) atrGUITeacherController);
+        this.addObserver((iObserver) atrGUIStudentController);
+    }
+    
+    @Override
+    public void validateNotification(Subject prmSubject, iModel prmModel) 
+    {
+        this.run();
+        GUILogin objView = (GUILogin) this.ATR_GUI_LOGIN.getView();
+        
+        if(prmModel != null)
+        {
+            UserModel objUserModel = (UserModel) prmModel;
+            objView.getFieldEmail().setText(objUserModel.getEmail()); 
+        }
     }
     
     @Override
@@ -60,7 +81,7 @@ public class GUILoginController extends Subject implements iGUILoginController, 
     {   
         observersLoader();
         
-        GUILogin objView = (GUILogin) this.atrGUILogin.getView();
+        GUILogin objView = (GUILogin) this.ATR_GUI_LOGIN.getView();
         objView.setVisible(true);
         
         if(!atrLoadedActions)
@@ -94,22 +115,9 @@ public class GUILoginController extends Subject implements iGUILoginController, 
         else
         {
             prmGUILogin.showMessage(
-                "No existe ese usuario en el sistema", 
+                "No existe el usuario o la contraseña es incorrecta", 
                 JOptionPane.ERROR_MESSAGE
             );
-        }
-    }
-
-    @Override
-    public void validateNotification(Subject prmSubject, iModel prmModel) 
-    {
-        this.run();
-        GUILogin objView = (GUILogin) this.atrGUILogin.getView();
-        
-        if(prmModel != null)
-        {
-            UserModel objUserModel = (UserModel) prmModel;
-            objView.getFieldEmail().setText(objUserModel.getEmail()); 
         }
     }
 }

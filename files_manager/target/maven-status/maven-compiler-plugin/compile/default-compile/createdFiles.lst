@@ -1,0 +1,4 @@
+plugin\files_manager\implement\ByteManager.class
+plugin\files_manager\exceptions\FileExceptionEnum.class
+plugin\files_manager\exceptions\FileException.class
+plugin\files_manager\implement\FileManager.class

@@ -1,12 +1,5 @@
 package presentation;
 
-
-import access.models.RoleEnum;
-import access.models.implement.UserModel;
-import support.security.iEncryptor;
-import support.security.Encryptor;
-import business.controllers.implement.UserController;
-import business.controllers.interfaces.iUserController;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;

@@ -1,5 +1,6 @@
 package support.validations;
 
+import access.models.EmailEnum;
 import access.models.implement.UserModel;
 import access.models.interfaces.iModel;
 import support.operation.model_exceptions.UserException;
@@ -13,13 +14,13 @@ import support.operation.model_exceptions.UserExceptionEnum;
  */
 public class UserValidation implements iValidator {
     
-    private UserException atrException;
+    private final UserException ATR_EXCEPTION;
     
     // Constructor:
     
     public UserValidation()
     {
-        atrException = new UserException();
+        ATR_EXCEPTION = new UserException();
     }
 
     @Override
@@ -30,7 +31,13 @@ public class UserValidation implements iValidator {
         validateEmail((UserModel) prmModel);
         validatePassword((UserModel) prmModel);
         validateTelephone((UserModel) prmModel);
-        atrException.throwException();
+        ATR_EXCEPTION.throwException();
+    }
+    
+    @Override
+    public void throwException() throws UserException 
+    {
+        ATR_EXCEPTION.throwException();
     }
 
     /**
@@ -47,7 +54,7 @@ public class UserValidation implements iValidator {
     {
         if(prmField == null)
         {
-            atrException.addExceptionMessage(prmFieldType, "No debe estar nulo");
+            ATR_EXCEPTION.addExceptionMessage(prmFieldType, "No debe estar nulo");
             return true;
         }
         return false;
@@ -67,7 +74,7 @@ public class UserValidation implements iValidator {
     {
         if(prmField.isEmpty())
         {
-            atrException.addExceptionMessage(prmFieldType, "No debe estar vacio");
+            ATR_EXCEPTION.addExceptionMessage(prmFieldType, "No debe estar vacio");
             return true;
         }
         return false;
@@ -83,7 +90,7 @@ public class UserValidation implements iValidator {
         
         if(!prmUser.getNames().matches("[a-zA-Z ]*"))
         {
-            atrException.addExceptionMessage(
+            ATR_EXCEPTION.addExceptionMessage(
                 UserExceptionEnum.NAMES, 
                 "Debe contener solamente letras"
             );
@@ -100,7 +107,7 @@ public class UserValidation implements iValidator {
         
         if(!prmUser.getSurnames().matches("[a-zA-Z ]*"))
         {
-            atrException.addExceptionMessage(
+            ATR_EXCEPTION.addExceptionMessage(
                 UserExceptionEnum.SURNAMES, 
                 "Debe contener solamente letras"
             );
@@ -114,9 +121,9 @@ public class UserValidation implements iValidator {
     {
         if(isNull(prmUser.getEmail(), UserExceptionEnum.EMAIL)) return;
         
-        if(!prmUser.getEmail().contains("@unicauca.edu.co"))
+        if(!prmUser.getEmail().contains(EmailEnum.UNICAUCA.getName()))
         {
-            atrException.addExceptionMessage(
+            ATR_EXCEPTION.addExceptionMessage(
                 UserExceptionEnum.EMAIL, 
                 "No pertenece al dominio de la Universidad del Cauca"
             );
@@ -132,28 +139,28 @@ public class UserValidation implements iValidator {
         
         if(prmUser.getPassword().length() < 6)
         {
-            atrException.addExceptionMessage(
+            ATR_EXCEPTION.addExceptionMessage(
                 UserExceptionEnum.PASSWORD, 
                 "Debe contener por lo menos seis caracteres"
             );
         }
         if(!prmUser.getPassword().matches(".*[0-9].*"))
         {
-            atrException.addExceptionMessage(
+            ATR_EXCEPTION.addExceptionMessage(
                 UserExceptionEnum.PASSWORD, 
                 "Debe contener por lo menos un digito"
             );
         }
         if(!prmUser.getPassword().matches(".*[!@#$%^&*(){}+=-_,./?].*"))
         {
-            atrException.addExceptionMessage(
+            ATR_EXCEPTION.addExceptionMessage(
                 UserExceptionEnum.PASSWORD, 
                 "Debe contener por lo menos un caracter especial"
             );
         }
         if(!prmUser.getPassword().matches(".*[A-Z].*"))
         {
-            atrException.addExceptionMessage(
+            ATR_EXCEPTION.addExceptionMessage(
                 UserExceptionEnum.PASSWORD, 
                 "Debe contener por lo menos una letra en mayuscula"
             );
@@ -169,7 +176,7 @@ public class UserValidation implements iValidator {
         
         if(prmUser.getTelephone() <= 0)
         {
-            atrException.addExceptionMessage(
+            ATR_EXCEPTION.addExceptionMessage(
                 UserExceptionEnum.TELEPHONE, 
                 "Debe ser positivo"
             );

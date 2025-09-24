@@ -35,14 +35,14 @@ public final class RepositoryScanner {
      */
     public Set<Class<?>> getRepositoryFactoriesClasses()
     {
-        if(ClientMain.class.isAnnotationPresent(RepsositoriesScan.class))
+        if(ClientMain.class.isAnnotationPresent(RepositoriesScan.class))
         {
-            String varPackageName = ClientMain.class.getAnnotation(RepsositoriesScan.class)
+            String varPackageName = ClientMain.class.getAnnotation(RepositoriesScan.class)
                                                     .packageName();
             
             return ATR_SCANNER.getClassesByAnnotation(
                                                     varPackageName, 
-                                                    RepsositoryFactory.class
+                                                    RepositoryFactory.class
                                                     );
         }
         return null;

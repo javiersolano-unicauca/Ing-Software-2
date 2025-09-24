@@ -1,2 +1,4 @@
-UserRepositoryTest.class
-UserControllerTest.class
+test\controllers\ProjectControllerTest.class
+test\controllers\UserControllerTest.class
+test\repositories\ProjectRepositoryTest.class
+test\repositories\UserRepositoryTest.class

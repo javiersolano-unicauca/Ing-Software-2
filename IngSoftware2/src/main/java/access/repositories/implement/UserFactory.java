@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import support.operation.dependency_injection.RepsositoryFactory;
+import support.operation.dependency_injection.RepositoryFactory;
 
 /**
  * Clase para la fabrica de de iUserRepository
@@ -22,7 +22,7 @@ import support.operation.dependency_injection.RepsositoryFactory;
  * 
  * @author javiersolanop777
  */
-@RepsositoryFactory
+@RepositoryFactory
 public class UserFactory extends Factory<String> implements iUserRepository {
     
     // Constructors:
@@ -52,22 +52,21 @@ public class UserFactory extends Factory<String> implements iUserRepository {
         + "     role TEXT NOT NULL CHECK(role IN ("
         + "           'estudiante',"
         + "           'profesor',"
-        + "           'administrador'"
+        + "           'coordinador'"
         + "     ))"
         + ");";
+        
+        atrConnection.connect();
 
-        try 
+        try(Statement objStmt = atrConnection.createStatement())
         {
-            atrConnection.connect();
-            Statement objStmt = atrConnection.createStatement();
             objStmt.execute(varSql);
-            atrConnection.disconnect();
         } 
         catch(SQLException ex) 
         {
-            atrConnection.disconnect();
             Logger.getLogger(UserFactory.class.getName()).log(Level.SEVERE, null, ex);
         }
+        finally { atrConnection.disconnect(); }
     }
 
     @Override
@@ -81,13 +80,9 @@ public class UserFactory extends Factory<String> implements iUserRepository {
     @Override
     public boolean save(iModel prmModel) 
     {
-        atrConnection.connect();
+        if(prmModel == null || !prmModel.validateFields()) return false;
         
-        try
-        {          
-            if(prmModel == null || !prmModel.validateFields()) return false;
-            
-            String varSql = "INSERT OR REPLACE INTO " + this.atrEntityName + "("
+        String varSql = "INSERT OR REPLACE INTO " + this.atrEntityName + "("
                             + "names,"
                             + "surnames,"
                             + "email,"
@@ -107,9 +102,11 @@ public class UserFactory extends Factory<String> implements iUserRepository {
                     + "?"
                     + ")";
             
-            Map<String, Object> listFields = prmModel.getFields();
-            
-            PreparedStatement objStmt = atrConnection.getStatement(varSql);
+        Map<String, Object> listFields = prmModel.getFields();
+        atrConnection.connect();
+        
+        try(PreparedStatement objStmt = atrConnection.getStatement(varSql))
+        {          
             objStmt.setString(1, (String) listFields.get("names"));
             objStmt.setString(2, (String) listFields.get("surnames"));
             objStmt.setString(3, (String) listFields.get("email"));
@@ -123,10 +120,10 @@ public class UserFactory extends Factory<String> implements iUserRepository {
         } 
         catch(SQLException ex) 
         {
-            atrConnection.disconnect();
             Logger.getLogger(UserFactory.class.getName()).log(Level.SEVERE, null, ex);
         }
-        atrConnection.disconnect();
+        finally { atrConnection.disconnect(); }
+        
         return false;
     }
 
@@ -136,14 +133,13 @@ public class UserFactory extends Factory<String> implements iUserRepository {
         atrConnection.connect();
         
         List<iModel> listUsers = new ArrayList<>();
+        String varSql = "SELECT * FROM " + this.atrEntityName;
         
-        try
-        {
-            String varSql = "SELECT * FROM " + this.atrEntityName;
-            
+        try(
             Statement objStmt = atrConnection.createStatement();
-            ResultSet objUsersSet = objStmt.executeQuery(varSql);
-            
+            ResultSet objUsersSet = objStmt.executeQuery(varSql); 
+        )
+        { 
             while(objUsersSet.next())
             {
                 listUsers.add(new UserModel(
@@ -156,50 +152,121 @@ public class UserFactory extends Factory<String> implements iUserRepository {
                     RoleEnum.getRole(objUsersSet.getString("role"))
                 ));
             }
-        }catch(SQLException ex) 
+        }
+        catch(SQLException ex) 
         {
-            atrConnection.disconnect();
             Logger.getLogger(UserFactory.class.getName()).log(Level.SEVERE, null, ex);
         }
-        atrConnection.disconnect();
-        return listUsers;
+        finally { atrConnection.disconnect(); }
+        
+        return (!listUsers.isEmpty()) ? listUsers : null;
     }
 
     @Override
     public iModel getById(String prmId) 
     {
+        if(prmId == null) return null;
         atrConnection.connect();
         
-        try
+        String varSql = "SELECT * FROM " + this.atrEntityName 
+                + " WHERE "
+                + this.atrId
+                + " = ?";
+        
+        try(PreparedStatement objStmt = atrConnection.getStatement(varSql))
         {
-            String varSql = "SELECT * FROM " + this.atrEntityName 
-                            + " WHERE "
-                            + this.atrId
-                            + " = ?";
-            
-            PreparedStatement objStmt = atrConnection.getStatement(varSql);
             objStmt.setString(1, prmId);
             
-            ResultSet objUsersSet = objStmt.executeQuery();
+            try(ResultSet objUsersSet = objStmt.executeQuery())
+            {
+                if(!objUsersSet.next()) return null;
             
-            if(!objUsersSet.next()) return null;
-            
-            return new UserModel(
-                objUsersSet.getString("names"),
-                objUsersSet.getString("surnames"),
-                objUsersSet.getString("email"),
-                objUsersSet.getString("password"),
-                objUsersSet.getLong("telephone"),
-                CareerEnum.getCareer(objUsersSet.getString("career")),
-                RoleEnum.getRole(objUsersSet.getString("role"))
-            );
+                return new UserModel(
+                    objUsersSet.getString("names"),
+                    objUsersSet.getString("surnames"),
+                    objUsersSet.getString("email"),
+                    objUsersSet.getString("password"),
+                    objUsersSet.getLong("telephone"),
+                    CareerEnum.getCareer(objUsersSet.getString("career")),
+                    RoleEnum.getRole(objUsersSet.getString("role"))
+                );
+            }
         }
         catch(SQLException ex) 
         {
-            atrConnection.disconnect();
             Logger.getLogger(UserFactory.class.getName()).log(Level.SEVERE, null, ex);
         }
-        atrConnection.disconnect();
+        finally { atrConnection.disconnect(); }
+        
+        return null;
+    }
+
+    @Override
+    public boolean remove(String prmId) 
+    {
+        if(prmId == null) return false;
+        atrConnection.connect();
+        
+        String varSql = "DELETE FROM " + this.atrEntityName 
+                            + " WHERE "
+                            + this.atrId
+                            + " = ?";
+        
+        try(PreparedStatement objStmt = atrConnection.getStatement(varSql))
+        {
+            objStmt.setString(1, prmId);
+            
+            return (objStmt.executeUpdate() > 0);
+        }
+        catch(SQLException ex) 
+        {
+            Logger.getLogger(UserFactory.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally { atrConnection.disconnect(); }
+        
+        return false;
+    }
+
+    @Override
+    public UserModel getByIdAndRole(String prmId, RoleEnum prmRole) 
+    {
+        if(prmId == null) return null;
+        atrConnection.connect();
+        
+        String varSql = "SELECT * FROM " + this.atrEntityName 
+                + " WHERE "
+                + this.atrId
+                + " = ?"
+                + " AND "
+                + "role"
+                + " = ?";
+        
+        try(PreparedStatement objStmt = atrConnection.getStatement(varSql))
+        {
+            objStmt.setString(1, prmId);
+            objStmt.setString(2, prmRole.getName());
+            
+            try(ResultSet objUsersSet = objStmt.executeQuery())
+            {
+                if(!objUsersSet.next()) return null;
+            
+                return new UserModel(
+                    objUsersSet.getString("names"),
+                    objUsersSet.getString("surnames"),
+                    objUsersSet.getString("email"),
+                    objUsersSet.getString("password"),
+                    objUsersSet.getLong("telephone"),
+                    CareerEnum.getCareer(objUsersSet.getString("career")),
+                    RoleEnum.getRole(objUsersSet.getString("role"))
+                );
+            }
+        }
+        catch(SQLException ex) 
+        {
+            Logger.getLogger(UserFactory.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally { atrConnection.disconnect(); }
+        
         return null;
     }
 }

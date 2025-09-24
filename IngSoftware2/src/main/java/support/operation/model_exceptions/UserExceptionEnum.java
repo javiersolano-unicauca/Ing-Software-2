@@ -13,11 +13,11 @@ public enum UserExceptionEnum implements iFieldEnum {
     PASSWORD("contraseña"),
     TELEPHONE("telefono");
     
-    private String atrName;
+    private final String ATR_NAME;
     
     UserExceptionEnum(String prmName)
     {
-        this.atrName = prmName;
+        this.ATR_NAME = prmName;
     }
     
     /**
@@ -28,6 +28,6 @@ public enum UserExceptionEnum implements iFieldEnum {
     @Override
     public String getFieldName()
     {
-        return this.atrName;
+        return this.ATR_NAME;
     }
 }

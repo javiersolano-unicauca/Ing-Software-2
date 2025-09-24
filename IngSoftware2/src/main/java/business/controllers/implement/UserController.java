@@ -26,6 +26,13 @@ public class UserController implements iUserController {
 
     public UserController() 
     {}
+    
+    // Metodos 'setter':
+    
+    public void setFactory(iUserRepository prmFactory)
+    {
+        this.atrUserRepository = prmFactory;
+    }
 
     @Override
     public UserModel save(UserModel prmUser) throws ModelException

@@ -1,10 +1,15 @@
 package presentation;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import presentation.interfaces.iGUIStudent;
+
 /**
  *
  * @author laura
  */
-public class GUIStudent extends javax.swing.JFrame{
+public class GUIStudent extends javax.swing.JFrame implements iGUIStudent {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIStudent.class.getName());
 
@@ -13,6 +18,29 @@ public class GUIStudent extends javax.swing.JFrame{
      */
     public GUIStudent() {
         initComponents();
+    }
+    
+    @Override
+    public JFrame getView() 
+    {
+        return this;
+    }
+    
+    @Override
+    public JButton getButtonBackLogin() 
+    {
+        return Back_login;
+    }
+
+    @Override
+    public void showMessage(String prmMessage, int prmMessageType)
+    {
+        JOptionPane.showMessageDialog(
+            this, 
+            prmMessage, 
+            "Modulo de estudiante", 
+            prmMessageType
+        );
     }
 
     /**
@@ -163,8 +191,7 @@ public class GUIStudent extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void Back_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_loginActionPerformed
-        new GUILogin().setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_Back_loginActionPerformed
 
 

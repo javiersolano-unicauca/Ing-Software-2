@@ -7,11 +7,11 @@ package access.models;
  */
 public enum RoleEnum {
     
-    ESTUDENT("estudiante"),
+    STUDENT("estudiante"),
     TEACHER("profesor"),
-    ADMINISTRATOR("administrador");
+    COORDINATOR("coordinador");
     
-    private String atrName;
+    private final String atrName;
     
     RoleEnum(String prmName)
     {

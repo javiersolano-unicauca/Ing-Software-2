@@ -22,12 +22,12 @@ import support.operation.model_exceptions.ModelException;
  * @author javiersolanop777
  */
 @Controller
-public class GUIRegisterController extends Subject implements iGUIRegisterController, iObserver {
+public class GUIRegisterController extends Subject implements iObserver, iGUIRegisterController {
     
     /**
      * Almacena la vista para el registro de usuarios
      */
-    private final GUIRegister atrGUIRegister;
+    private final GUIRegister ATR_GUI_REGISTER;
     
     /**
      * Almacena la bandera para la carga de las acciones de eventos
@@ -44,7 +44,7 @@ public class GUIRegisterController extends Subject implements iGUIRegisterContro
     
     public GUIRegisterController()
     {
-        atrGUIRegister = new GUIRegister();
+        ATR_GUI_REGISTER = new GUIRegister();
         atrLoadedActions = false;
     }
     
@@ -57,11 +57,17 @@ public class GUIRegisterController extends Subject implements iGUIRegisterContro
     }
     
     @Override
+    public void validateNotification(Subject prmSubject, iModel prmModel) 
+    {
+        if(prmModel == null) this.run();
+    }
+    
+    @Override
     public void run()
     {
         observersLoader();
         
-        GUIRegister objView = (GUIRegister) this.atrGUIRegister.getView();
+        GUIRegister objView = (GUIRegister) this.ATR_GUI_REGISTER.getView();
         objView.setVisible(true);
         
         if(!atrLoadedActions)
@@ -122,11 +128,5 @@ public class GUIRegisterController extends Subject implements iGUIRegisterContro
     {
         prmGUIRegister.setVisible(false);
         this.notifyObservers(null);
-    }
-
-    @Override
-    public void validateNotification(Subject prmSubject, iModel prmModel) 
-    {
-        this.run();
     }
 }
