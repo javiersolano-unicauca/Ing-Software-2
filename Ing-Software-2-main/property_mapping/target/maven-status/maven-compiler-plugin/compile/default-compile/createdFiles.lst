@@ -1,4 +1,0 @@
-plugin\property_mapping\annotations\PropertiesScan.class
-plugin\property_mapping\annotations\PropertyMapping.class
-plugin\property_mapping\implement\MapperOfProperties.class
-plugin\property_mapping\annotations\Property.class
