@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: test.repositories.UserRepositoryTest
+Test set: test.controllers.SessionControllerTest
 -------------------------------------------------------------------------------
 Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
