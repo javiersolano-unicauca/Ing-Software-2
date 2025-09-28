@@ -1,75 +1,81 @@
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\access\models\ModalityEnum.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\access\models\implement\ProjectModelPK.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\presentation\GUIStudent.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\presentation\controllers\GUIStudentController.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\validations\UserValidation.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\presentation\controllers\GUIRegisterController.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\validations\iValidator.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\validations\ProjectValidation.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\access\models\RoleEnum.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\access\repositories\interfaces\iConnectionDB.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\interfaces\iCoordinatorController.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\operation\builders\ResearchProjectBuilder.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\presentation\ClientMain.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\presentation\interfaces\iObserver.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\presentation\interfaces\iGUIStudentController.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\implement\StudentController.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\implement\TeacherController.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\implement\SessionController.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\access\repositories\implement\UserFactory.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\operation\dependency_injection\FactoryAutowired.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\access\repositories\implement\ProjectFactory.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\operation\dependency_injection\ControllerScanner.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\implement\UserController.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\access\repositories\implement\Factory.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\operation\model_exceptions\UserException.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\implement\CoordinatorController.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\presentation\interfaces\iGUIRegister.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\access\repositories\implement\ConnectorSQLite.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\access\repositories\interfaces\iUserRepository.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\presentation\controllers\Subject.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\presentation\interfaces\iGUILoginController.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\operation\model_exceptions\ModelException.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\access\models\implement\ProjectModel.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\operation\dependency_injection\Controller.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\presentation\GUIRegister.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\operation\dependency_injection\RepositoryFactory.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\access\repositories\interfaces\iProjectRepository.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\presentation\interfaces\iGUITeacher.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\access\models\interfaces\iModel.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\operation\builders\ProjectBuilder.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\operation\model_exceptions\iFieldEnum.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\communication\iEmailManager.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\operation\dependency_injection\ControllersScan.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\presentation\interfaces\iGUILogin.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\access\models\StatusEnum.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\operation\builders\ProjectDirector.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\operation\dependency_injection\RepositoriesScan.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\access\models\EmailEnum.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\operation\dependency_injection\RepositoryScanner.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\presentation\GUILogin.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\security\iEncryptor.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\interfaces\iTeacherController.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\operation\dependency_injection\ControllerAutowired.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\presentation\controllers\GUILoginController.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\implement\ProjectController.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\presentation\GUITeacher.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\security\Encryptor.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\access\models\DefaultInformationEnum.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\operation\model_exceptions\ProjectException.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\presentation\Application.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\access\models\CareerEnum.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\access\models\implement\UserModel.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\interfaces\iStudentController.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\interfaces\iUserController.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\operation\model_exceptions\UserExceptionEnum.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\interfaces\iSessionController.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\presentation\interfaces\iGUIRegisterController.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\interfaces\iProjectController.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\access\repositories\interfaces\iRepository.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\presentation\interfaces\iGUIStudent.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\presentation\interfaces\iGUITeacherController.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\communication\EmailManager.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\operation\builders\ProffesionalProjectBuilder.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\support\operation\model_exceptions\ProjectExceptionEnum.java
-C:\Users\DAYANA PORTILLA\Desktop\Ing-Software-2\IngSoftware2\src\main\java\presentation\controllers\GUITeacherController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\access\models\CareerEnum.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\access\models\DefaultInformationEnum.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\access\models\EmailEnum.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\access\models\implement\ProjectModel.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\access\models\implement\ProjectModelPK.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\access\models\implement\UserModel.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\access\models\interfaces\iModel.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\access\models\ModalityEnum.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\access\models\RoleEnum.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\access\models\StatusEnum.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\access\repositories\implement\ConnectorSQLite.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\access\repositories\implement\Factory.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\access\repositories\implement\ProjectFactory.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\access\repositories\implement\UserFactory.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\access\repositories\interfaces\iConnectionDB.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\access\repositories\interfaces\iProjectRepository.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\access\repositories\interfaces\iRepository.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\access\repositories\interfaces\iUserRepository.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\implement\CoordinatorController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\implement\ProjectController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\implement\SessionController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\implement\StudentController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\implement\TeacherController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\implement\UserController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\interfaces\iCoordinatorController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\interfaces\iProjectController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\interfaces\iSessionController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\interfaces\iStudentController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\interfaces\iTeacherController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\business\controllers\interfaces\iUserController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\Application.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\ClientMain.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\controllers\GUICoordinatorController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\controllers\GUILoginController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\controllers\GUIRegisterController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\controllers\GUIStudentController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\controllers\GUITeacherController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\controllers\Subject.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\GradientPanel.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\GUICoordinator.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\GUILogin.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\GUIRegister.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\GUIStudent.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\GUITeacher.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\interfaces\iGUICoordinator.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\interfaces\iGUICoordinatorController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\interfaces\iGUILogin.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\interfaces\iGUILoginController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\interfaces\iGUIRegister.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\interfaces\iGUIRegisterController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\interfaces\iGUIStudent.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\interfaces\iGUIStudentController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\interfaces\iGUITeacher.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\interfaces\iGUITeacherController.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\interfaces\iObserver.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\presentation\RoundPanel.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\communication\EmailManager.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\communication\iEmailManager.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\operation\builders\ProffesionalProjectBuilder.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\operation\builders\ProjectBuilder.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\operation\builders\ProjectDirector.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\operation\builders\ResearchProjectBuilder.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\operation\dependency_injection\Controller.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\operation\dependency_injection\ControllerAutowired.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\operation\dependency_injection\ControllerScanner.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\operation\dependency_injection\ControllersScan.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\operation\dependency_injection\FactoryAutowired.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\operation\dependency_injection\RepositoriesScan.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\operation\dependency_injection\RepositoryFactory.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\operation\dependency_injection\RepositoryScanner.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\operation\model_exceptions\iFieldEnum.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\operation\model_exceptions\ModelException.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\operation\model_exceptions\ProjectException.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\operation\model_exceptions\ProjectExceptionEnum.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\operation\model_exceptions\UserException.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\operation\model_exceptions\UserExceptionEnum.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\security\Encryptor.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\security\iEncryptor.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\validations\iValidator.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\validations\ProjectValidation.java
+C:\Universidad\Semestre 6\Ing software II\Teoría\Ing-Software-2\IngSoftware2\src\main\java\support\validations\UserValidation.java
