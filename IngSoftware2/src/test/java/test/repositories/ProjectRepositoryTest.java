@@ -48,8 +48,8 @@ public class ProjectRepositoryTest {
         
         ProjectModelPK objProjectModelPK = new ProjectModelPK(
             LocalDate.now(),
-            "cccc@unicauca.edu.co",
-            "cccc@unicauca.edu.co"
+            "profesor@unicauca.edu.co",
+            "estudiante@unicauca.edu.co"
         );
         
         ProjectModel objProjectModel = (ProjectModel) atrProjectRepository.getById(objProjectModelPK);

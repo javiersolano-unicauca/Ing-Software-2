@@ -16,6 +16,13 @@ public interface iGUITeacherController {
     void run();
     
     /**
+     * Metodo para guardar un proyecto
+     * 
+     * @param prmGUITeacher Recibe la referencia de la vista
+     */
+    void saveProject(GUITeacher prmGUITeacher);
+    
+    /**
      * Metodo para la definicion de la accion de cerrar sesion
      * 
      * @param prmGUITeacher Recibe la referencia de la vista

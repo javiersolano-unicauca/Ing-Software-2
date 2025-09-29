@@ -31,12 +31,14 @@ public class TeacherController implements iTeacherController {
      * Almacena el director encargado de dirigir
      * la construccion de los proyectos
      */
-    private ProjectDirector atrProjectDirector;
+    private final ProjectDirector ATR_PROJECT_DIRECTOR;
     
     // Constructors:
     
     public TeacherController()
-    {}
+    {
+        ATR_PROJECT_DIRECTOR = new ProjectDirector();
+    }
 
     @Override
     public ProjectModel saveProject(
@@ -46,8 +48,9 @@ public class TeacherController implements iTeacherController {
     {
         if((prmProject == null) || (prmFormat == null)) return null;
         
-        atrProjectDirector.setProjectBuilder(prmProject);
-        ProjectModel objProject = atrProjectDirector.getProjectModel();
+        ATR_PROJECT_DIRECTOR.setProjectBuilder(prmProject);
+        ATR_PROJECT_DIRECTOR.buildProjectModel();
+        ProjectModel objProject = ATR_PROJECT_DIRECTOR.getProjectModel();
         
         return atrProjectController.save(objProject, prmFormat);
     }
@@ -63,8 +66,9 @@ public class TeacherController implements iTeacherController {
         || (prmFormat == null)
         || (prmLetterOfAcceptance == null)) return null;
         
-        atrProjectDirector.setProjectBuilder(prmProject);
-        ProjectModel objProject = atrProjectDirector.getProjectModel();
+        ATR_PROJECT_DIRECTOR.setProjectBuilder(prmProject);
+        ATR_PROJECT_DIRECTOR.buildProjectModel();
+        ProjectModel objProject = ATR_PROJECT_DIRECTOR.getProjectModel();
         
         ProjectValidation objValidator = new ProjectValidation();
         

@@ -8,7 +8,8 @@ import support.operation.dependency_injection.RepositoriesScan;
  * @author javiersolanop777
  */
 @PropertiesScan(packagesNames = {
-    "access.repositories.implement"
+    "access.repositories.implement",
+    "business.controllers.implement"
 })
 @RepositoriesScan(packageName = "access.repositories.implement")
 @ControllersScan(packagesNames = {

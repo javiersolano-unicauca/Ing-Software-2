@@ -42,8 +42,8 @@ public abstract class Subject {
     /**
      * Metodo para notificar a un unico observador
      * 
-     * @param prmObserver Recibe la referencia del ob
-     * @param prmModel 
+     * @param prmObserver Recibe la referencia del observador
+     * @param prmModel Recibe la referencia del modelo
      */
     public void notifyOnly(Class<? extends iObserver> prmObserver, iModel prmModel)
     {
@@ -67,6 +67,24 @@ public abstract class Subject {
         
         for(iObserver objObserver: atrObservers)
             objObserver.validateNotification(this, prmModel);
+    }
+    
+    /**
+     * Metodo para notificar a los observerdadores excepto a uno 
+     * especifico
+     * 
+     * @param prmObserver Recibe la referencia del observador
+     * @param prmModel Recibe la referencia del modelo
+     */
+    public void notifyObserversExcept(Class<? extends iObserver> prmObserver, iModel prmModel)
+    {
+        if(atrObservers == null) return;
+        
+        for(iObserver objObserver: atrObservers)
+        {
+            if(!objObserver.getClass().equals(prmObserver))
+                objObserver.validateNotification(this, prmModel);
+        }
     }
     
     /**

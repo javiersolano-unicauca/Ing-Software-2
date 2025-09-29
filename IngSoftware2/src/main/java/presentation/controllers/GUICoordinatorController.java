@@ -21,6 +21,7 @@ import support.operation.dependency_injection.ControllerAutowired;
  *
  * @author laura
  */
+@Controller
 public class GUICoordinatorController extends Subject implements iObserver, iGUICoordinatorController {
     /**
      * Almacena la vista del modulo de coordinador

@@ -6,6 +6,7 @@ import business.controllers.interfaces.iSessionController;
 import java.awt.EventQueue;
 import javax.swing.JOptionPane;
 import presentation.GUILogin;
+import presentation.interfaces.iGUICoordinatorController;
 import presentation.interfaces.iGUILogin;
 import presentation.interfaces.iGUILoginController;
 import presentation.interfaces.iGUIRegisterController;
@@ -46,6 +47,9 @@ public class GUILoginController extends Subject implements iObserver, iGUILoginC
     @ControllerAutowired
     private iGUIStudentController atrGUIStudentController;
     
+    @ControllerAutowired
+    private iGUICoordinatorController atrGUICoordinatorController;
+    
     // Contructors:
     
     public GUILoginController()
@@ -61,6 +65,7 @@ public class GUILoginController extends Subject implements iObserver, iGUILoginC
         this.addObserver((iObserver) atrGUIRegisterController);
         this.addObserver((iObserver) atrGUITeacherController);
         this.addObserver((iObserver) atrGUIStudentController);
+        this.addObserver((iObserver) atrGUICoordinatorController);
     }
     
     @Override
