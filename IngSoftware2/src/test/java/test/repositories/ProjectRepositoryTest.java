@@ -24,6 +24,7 @@ public class ProjectRepositoryTest {
     public ProjectRepositoryTest() 
     {
         ConnectorSQLite.atrUrl = "jdbc:sqlite:IngSoftware2.db";
+        ProjectFactory.atrStorePath = "resources/store";
         atrProjectRepository = (ProjectFactory) new ProjectFactory().getRespositoryFactory();
     }
     
@@ -48,8 +49,8 @@ public class ProjectRepositoryTest {
         
         ProjectModelPK objProjectModelPK = new ProjectModelPK(
             LocalDate.now(),
-            "profesor@unicauca.edu.co",
-            "estudiante@unicauca.edu.co"
+            "cccc@unicauca.edu.co",
+            "cccc@unicauca.edu.co"
         );
         
         ProjectModel objProjectModel = (ProjectModel) atrProjectRepository.getById(objProjectModelPK);

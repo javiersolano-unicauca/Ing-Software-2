@@ -172,6 +172,7 @@ public class GUITeacherController extends Subject implements iObserver, iGUITeac
      */
     private ProjectModel saveResearchProject(GUITeacher prmGUITeacher) throws ModelException
     {        
+        System.out.println(prmGUITeacher.getFieldStudent2().getText());
         return atrTeacherController.saveProject(
             new ResearchProjectBuilder(
                 prmGUITeacher.getFieldProjectTitle().getText(), 

@@ -34,8 +34,9 @@ public class ProjectControllerTest {
     public ProjectControllerTest()
     {
         ConnectorSQLite.atrUrl = "jdbc:sqlite:IngSoftware2.db";
+        ProjectFactory.atrStorePath = "resources/store";
         atrProjectRepository = (ProjectFactory) new ProjectFactory().getRespositoryFactory();
-        ProjectController.atrStorePath = "resources\\store";
+        ProjectController.atrStorePath = "resources/store";
         atrProjectController = new ProjectController();
         atrProjectController.setFactory(atrProjectRepository);
     }

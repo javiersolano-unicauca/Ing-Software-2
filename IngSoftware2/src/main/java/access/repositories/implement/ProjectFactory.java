@@ -7,6 +7,7 @@ import access.models.implement.ProjectModelPK;
 import access.models.interfaces.iModel;
 import access.repositories.interfaces.iProjectRepository;
 import access.repositories.interfaces.iRepository;
+import static business.controllers.implement.ProjectController.atrStorePath;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,6 +19,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import plugin.property_mapping.annotations.Property;
+import plugin.property_mapping.annotations.PropertyMapping;
 import support.operation.dependency_injection.RepositoryFactory;
 
 /**
@@ -27,7 +30,11 @@ import support.operation.dependency_injection.RepositoryFactory;
  * @author javiersolanop777
  */
 @RepositoryFactory
+@PropertyMapping
 public class ProjectFactory extends Factory<ProjectModelPK> implements iProjectRepository {
+    
+    @Property(property = "store.path")
+    public static String atrStorePath;
     
     // Constructors:
     
@@ -189,7 +196,7 @@ public class ProjectFactory extends Factory<ProjectModelPK> implements iProjectR
                     StatusEnum.getStatus(objProjectsSet.getString("status")),
                     objProjectsSet.getInt("number_of_attempts"),
                     objProjectsSet.getString("observations"),
-                    objProjectsSet.getString("file_name")
+                    this.setFilePath(objProjectsSet.getString("file_name"))
                 ));
             }
         }
@@ -375,5 +382,17 @@ public class ProjectFactory extends Factory<ProjectModelPK> implements iProjectR
         finally { atrConnection.disconnect(); }
         
         return null;
+    }
+    
+    private String setFilePath(String prmFileName)
+    {
+        atrStorePath = atrStorePath.replace("/","\\");
+        
+        return System.getProperty("user.dir")
+                + "\\src\\main\\java\\" 
+                + atrStorePath
+                + "\\"
+                + prmFileName
+                + ".pdf";
     }
 }

@@ -77,10 +77,11 @@ public class ResearchProjectBuilder extends ProjectBuilder {
     @Override
     public void buildStudent2() 
     {
-        if(this.ATR_STUDENT_2 != null)
+        if((this.ATR_STUDENT_2 != null) && !this.ATR_STUDENT_2.isEmpty())
             this.atrProjectModel.setStudent2(this.ATR_STUDENT_2);
         else
             this.atrProjectModel.setStudent2(DefaultInformationEnum.NO.getName());
+        System.out.println(this.ATR_STUDENT_2);
     }
 
     @Override

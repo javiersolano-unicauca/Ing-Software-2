@@ -283,6 +283,7 @@ public class FileManager {
             if(!objFile.delete()) FileException.throwException(FileExceptionEnum.DELETE);
         }
         catch(FileException e){
+            System.out.println(e.getMessage());
             FileException.throwException(FileExceptionEnum.DELETE);
         }
     }
