@@ -12,7 +12,32 @@ public enum StatusEnum {
     SECOND("segunda evaluacion formato A"),
     THIRD("tercera evaluacion formato A"),
     ACCEPTED("aceptado formato A"),
-    REJECTED("rechazado formato A");
+    REJECTED("rechazado formato A"),
+    
+    // Estados del lab - Patrón State
+    INICIO("Inicio"),
+    FORMATO_A_DILIGENCIADO("Formato A Diligenciado"),
+    PRESENTADO_A_COORDINADOR("Presentado a Coordinador"),
+    EN_EVALUACION_COMITE("En Evaluación Comité"),
+    CORRECCIONES_COMITE("Correcciones Comité"),
+    ACEPTADO_COMITE("Aceptado por Comité"),
+    RECHAZADO_COMITE("Rechazado por Comité"),
+    ESCRIBIENDO_ANTEPROYECTO("Escribiendo Anteproyecto"),
+    PRESENTADO_JEFATURA("Presentado a Jefatura"),
+    EVALUACION_DEPARTAMENTO("Evaluación Departamento"),
+    EVALUADOR_PIDE_CORRECCIONES("Evaluador Pide Correcciones"),
+    EVALUADOR_ACEPTA("Evaluador Acepta"),
+    EVALUADOR_RECHAZA("Evaluador Rechaza"),
+    APROBADO_CONSEJO("Aprobado Consejo"),
+    RESOLUCION_APROBADO("Resolución Aprobado"),
+    EN_DESARROLLO("En Desarrollo"),
+    PRORROGA_SOLICITADA("Prórroga Solicitada"),
+    FINALIZADO_MONOGRAFIA("Finalizado Monografía"),
+    PRESENTADO_DECANATURA("Presentado a Decanatura"),
+    FECHA_SUSTENTACION_FIJADA("Fecha Sustentación Fijada"),
+    SUSTENTACION_PUBLICA("Sustentación Pública"),
+    SUSTENTACION_APROBADA("Sustentación Aprobada"),
+    SUSTENTACION_RECHAZADA("Sustentación Rechazada");
     
     private final String atrName;
     
