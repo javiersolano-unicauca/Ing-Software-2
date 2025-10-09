@@ -1,5 +1,10 @@
-D:\Documentos\Ing-Software-2\IngSoftware2\src\test\java\test\repositories\UserRepositoryTest.java
-D:\Documentos\Ing-Software-2\IngSoftware2\src\test\java\test\controllers\ProjectControllerTest.java
-D:\Documentos\Ing-Software-2\IngSoftware2\src\test\java\test\controllers\SessionControllerTest.java
-D:\Documentos\Ing-Software-2\IngSoftware2\src\test\java\test\repositories\ProjectRepositoryTest.java
-D:\Documentos\Ing-Software-2\IngSoftware2\src\test\java\test\controllers\UserControllerTest.java
+C:\Users\yezid\Documents\lab\Ing-Software-2\IngSoftware2\src\test\java\support\operation\adapter\AdapterPatternTest.java
+C:\Users\yezid\Documents\lab\Ing-Software-2\IngSoftware2\src\test\java\support\operation\decorator\DecoratorPatternTest.java
+C:\Users\yezid\Documents\lab\Ing-Software-2\IngSoftware2\src\test\java\support\operation\facade\FacadePatternTest.java
+C:\Users\yezid\Documents\lab\Ing-Software-2\IngSoftware2\src\test\java\support\operation\state\StatePatternTest.java
+C:\Users\yezid\Documents\lab\Ing-Software-2\IngSoftware2\src\test\java\support\operation\template_method\TemplateMethodTest.java
+C:\Users\yezid\Documents\lab\Ing-Software-2\IngSoftware2\src\test\java\test\controllers\ProjectControllerTest.java
+C:\Users\yezid\Documents\lab\Ing-Software-2\IngSoftware2\src\test\java\test\controllers\SessionControllerTest.java
+C:\Users\yezid\Documents\lab\Ing-Software-2\IngSoftware2\src\test\java\test\controllers\UserControllerTest.java
+C:\Users\yezid\Documents\lab\Ing-Software-2\IngSoftware2\src\test\java\test\repositories\ProjectRepositoryTest.java
+C:\Users\yezid\Documents\lab\Ing-Software-2\IngSoftware2\src\test\java\test\repositories\UserRepositoryTest.java

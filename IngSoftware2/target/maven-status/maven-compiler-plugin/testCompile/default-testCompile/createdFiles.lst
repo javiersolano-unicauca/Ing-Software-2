@@ -1,5 +1,10 @@
-test\controllers\ProjectControllerTest.class
+support\operation\state\StatePatternTest.class
+support\operation\template_method\TemplateMethodTest.class
 test\controllers\UserControllerTest.class
 test\repositories\ProjectRepositoryTest.class
-test\repositories\UserRepositoryTest.class
 test\controllers\SessionControllerTest.class
+support\operation\decorator\DecoratorPatternTest.class
+test\controllers\ProjectControllerTest.class
+test\repositories\UserRepositoryTest.class
+support\operation\adapter\AdapterPatternTest.class
+support\operation\facade\FacadePatternTest.class
