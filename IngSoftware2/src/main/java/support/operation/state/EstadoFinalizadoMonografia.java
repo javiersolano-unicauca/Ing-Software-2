@@ -22,7 +22,7 @@ public class EstadoFinalizadoMonografia implements ProjectState{
 
     @Override
     public String getEstadoNombre() {
-        return "Finalizado Monografía";
+        return "Finalizado Monografia";
     }
 
     @Override

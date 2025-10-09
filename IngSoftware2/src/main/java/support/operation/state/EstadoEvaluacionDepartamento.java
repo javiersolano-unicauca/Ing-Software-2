@@ -27,7 +27,7 @@ public class EstadoEvaluacionDepartamento implements ProjectState{
 
     @Override
     public String getEstadoNombre() {
-        return "Evaluación Departamento";
+        return "Evaluacion Departamento";
     }
 
     @Override

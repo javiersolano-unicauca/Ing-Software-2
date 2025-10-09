@@ -23,7 +23,7 @@ public class EstadoSustentacionAprobada implements ProjectState {
 
     @Override
     public String getEstadoNombre() {
-        return "Sustentación Aprobada";
+        return "Sustentacion Aprobada";
     }
 
     @Override

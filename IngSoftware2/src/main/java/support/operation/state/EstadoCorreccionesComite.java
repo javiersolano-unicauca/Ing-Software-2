@@ -22,7 +22,7 @@ public class EstadoCorreccionesComite implements ProjectState{
 
     @Override
     public String getEstadoNombre() {
-        return "Correcciones Comité";
+        return "Correcciones Comite";
     }
 
     @Override

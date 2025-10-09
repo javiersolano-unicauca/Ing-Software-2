@@ -22,7 +22,7 @@ public class EstadoFechaSustentacionFijada implements ProjectState{
 
     @Override
     public String getEstadoNombre() {
-        return "Fecha Sustentación Fijada";
+        return "Fecha Sustentacion Fijada";
     }
 
     @Override

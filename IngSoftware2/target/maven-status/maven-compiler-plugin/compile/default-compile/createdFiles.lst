@@ -71,6 +71,7 @@ presentation\interfaces\iGUIRegisterController.class
 business\controllers\interfaces\iCoordinatorController.class
 support\operation\facade\ProjectEvaluationService.class
 support\operation\builders\ProffesionalProjectBuilder.class
+presentation\MainPatrones.class
 support\security\iEncryptor.class
 presentation\controllers\Subject.class
 support\operation\state\EstadoPresentadoDecanatura.class

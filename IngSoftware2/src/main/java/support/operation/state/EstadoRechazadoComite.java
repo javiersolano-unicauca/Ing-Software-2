@@ -22,7 +22,7 @@ public class EstadoRechazadoComite implements ProjectState{
 
     @Override
     public String getEstadoNombre() {
-        return "Rechazado por Comité";
+        return "Rechazado por Comite";
     }
 
     @Override

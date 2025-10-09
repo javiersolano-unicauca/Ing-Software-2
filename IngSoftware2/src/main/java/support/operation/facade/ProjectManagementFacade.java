@@ -72,7 +72,7 @@ public class ProjectManagementFacade {
         // 5. Actualizar estado del proyecto
         project.setStatus(StatusEnum.EN_EVALUACION_COMITE);
         
-        System.out.println("\n✅ PROCESO COMPLETADO EXITOSAMENTE");
+        System.out.println("\n PROCESO COMPLETADO EXITOSAMENTE");
         return true;
     }
     

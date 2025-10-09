@@ -22,7 +22,7 @@ public class EstadoProrrogaSolicitada implements ProjectState{
 
     @Override
     public String getEstadoNombre() {
-        return "Prórroga Solicitada";
+        return "Prorroga Solicitada";
     }
 
     @Override

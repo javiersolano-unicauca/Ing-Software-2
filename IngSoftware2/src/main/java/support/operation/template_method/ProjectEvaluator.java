@@ -34,7 +34,7 @@ public abstract class ProjectEvaluator {
         makeDecision(project);
         
         System.out.println("================================================");
-        System.out.println("✅ EVALUACION COMPLETADA");
+        System.out.println("EVALUACION COMPLETADA");
     }
     
     // Métodos abstractos que deben ser implementados por las subclases
@@ -61,13 +61,13 @@ public abstract class ProjectEvaluator {
     }
     
     protected final void validateBasicRequirements(ProjectModel project) {
-        System.out.println("   Validando requisitos basicos...");
+        System.out.println("Validando requisitos basicos...");
         if (project.getTitle() == null || project.getTitle().isEmpty()) {
             throw new IllegalArgumentException("El proyecto debe tener un titulo");
         }
         if (project.getGeneralObjective() == null || project.getGeneralObjective().isEmpty()) {
             throw new IllegalArgumentException("El proyecto debe tener un objetivo general");
         }
-        System.out.println("   Requisitos basicos validados correctamente");
+        System.out.println("Requisitos basicos validados correctamente");
     }
 }

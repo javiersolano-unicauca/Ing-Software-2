@@ -36,10 +36,10 @@ public class ProjectContext {
     public void corregir() {
         intentosCorreccion++;
         if (intentosCorreccion > 3) {
-            System.out.println("Se superó el número máximo de correcciones. Rechazado.");
+            System.out.println("Se supero el numero maximo de correcciones. Rechazado.");
             setCurrentState(new EstadoRechazadoComite());
         } else {
-            System.out.println("Proyecto devuelto para corrección. Intento " + intentosCorreccion);
+            System.out.println("Proyecto devuelto para correccion. Intento " + intentosCorreccion);
             setCurrentState(new EstadoCorreccionesComite());
         }
     }

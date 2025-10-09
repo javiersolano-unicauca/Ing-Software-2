@@ -27,7 +27,7 @@ public class EstadoEnEvaluacionComite implements ProjectState{
 
     @Override
     public String getEstadoNombre() {
-        return "En Evaluación Comité";
+        return "En Evaluacion Comite";
     }
 
     @Override

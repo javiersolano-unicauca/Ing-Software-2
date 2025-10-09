@@ -23,7 +23,7 @@ public class EstadoSustentacionRechazada implements ProjectState {
 
     @Override
     public String getEstadoNombre() {
-        return "Sustentación Rechazada";
+        return "Sustentacion Rechazada";
     }
 
     @Override
